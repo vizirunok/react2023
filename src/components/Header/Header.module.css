@@ -1,0 +1,10 @@
+.Header {
+    height: 100px;
+    background: #61dafb;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.btns{
+    margin: 10px;
+}
