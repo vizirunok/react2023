@@ -1,8 +1,7 @@
-import './App.css';
 import {Navigate, Route, Routes} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import {LoginPage, RegisterPage} from "./pages";
+import {LoginPage, RegisterPage, CarsPage} from "./pages";
 
 
 function App() {
@@ -14,6 +13,7 @@ function App() {
                 <Route index element={<Navigate to={'/register'}/>}/>
                 <Route path={'/register'} element={<RegisterPage/>}/>
                 <Route path={'/login'} element={<LoginPage/>}/>
+                <Route path={'/cars'} element={<CarsPage/>}/>
             </Route>
         </Routes>
     );
