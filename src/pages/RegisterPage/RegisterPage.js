@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
-import {AuthServices} from "../../services";
+import {authServices} from "../../services";
 
 
 const RegisterPage = () => {
@@ -15,7 +15,7 @@ const RegisterPage = () => {
 
     const submit = async (user) => {
         try {
-            await AuthServices.register(user)
+            await authServices.register(user)
             navigate('/login');
         }
         catch (e) {

@@ -1,9 +1,13 @@
-const Cars = () => {
+import {Car} from "../Car/Car";
+
+const Cars = ({cars}) => {
 
 
     return (
         <div>
-            Cars
+            {
+                cars.map(car => <Car key={car.id} car={car}/>)
+            }
         </div>
     );
 };

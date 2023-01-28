@@ -5,7 +5,7 @@ import {urls} from "../configs";
 const _accessTokenKey = 'access';
 const _refreshTokenKey = 'refresh';
 
-const AuthServices = {
+const authServices = {
     register: (user) => axiosInstance.post(urls.users, user),
     auth: (user) => axiosInstance.post(urls.auth, user),
     refresh: (token) => axiosInstance.post(urls.refresh, {token}),
@@ -22,4 +22,4 @@ const AuthServices = {
     getRefreshToken: () => localStorage.getItem(_refreshTokenKey),
 };
 
-export {AuthServices};
+export {authServices};
