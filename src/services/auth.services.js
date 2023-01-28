@@ -8,7 +8,7 @@ const _refreshTokenKey = 'refresh';
 const AuthServices = {
     register: (user) => axiosInstance.post(urls.users, user),
     auth: (user) => axiosInstance.post(urls.auth, user),
-    refresh: (token) => axiosInstance.post(urls.refresh, {token}),
+    refresh: (refresh) => axiosInstance.post(urls.refresh, {refresh}),
 
     setTokens: ({access, refresh}) => {
         localStorage.setItem(_accessTokenKey, access);
