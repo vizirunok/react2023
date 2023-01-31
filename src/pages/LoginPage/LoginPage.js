@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 
 import {authServices} from "../../services";
 
@@ -13,6 +13,8 @@ const LoginPage = () => {
 
     const navigate = useNavigate();
 
+    const [query,] = useSearchParams();
+
     const submit = async (user) => {
         try {
             const {data} = await authServices.auth(user);
@@ -24,13 +26,16 @@ const LoginPage = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
-            {error && <span>{JSON.stringify(error)}</span>}
-            <hr/>
-            <input type="text" placeholder={'username'} {...register('username')}/>
-            <input type="text" placeholder={'password'} {...register('password')}/>
-            <button>Login</button>
-        </form>
+        <div>
+            {query.has('expSession') && <h1>session end</h1>}
+            <form onSubmit={handleSubmit(submit)}>
+                {error && <span>{JSON.stringify(error)}</span>}
+                <hr/>
+                <input type="text" placeholder={'username'} {...register('username')}/>
+                <input type="text" placeholder={'password'} {...register('password')}/>
+                <button>Login</button>
+            </form>
+        </div>
     );
 };
 
