@@ -1,25 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import {Count1} from "./components/count1";
+import {Count2} from "./components/count2";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div>
+            <Count1/>
+            <Count2/>
+        </div>
+    );
 }
 
 export default App;
