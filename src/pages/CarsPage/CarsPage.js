@@ -36,7 +36,7 @@ const CarsPage = () => {
             <hr/>
             <button disabled={!prev} onClick={prevPage}>prev</button>
             <button disabled={!next} onClick={nextPage}>next</button>
-            <Cars cars={cars}/>
+            <Cars cars={cars} setCars={setCars}/>
         </div>
     );
 };
